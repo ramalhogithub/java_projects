@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"	
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">	
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Aplicação JSF</title>
+</h:head>
+<body>
+<div align="center">
+	<h2><h:outputText value="Uma Aplicação JSF"/></h2>
+	<h2><h:outputText value="#{bean.mensagem}"/></h2>
+    <h:form>
+    	Página : &nbsp; <h:inputText value="#{pageBean.page}"/>
+    	<h:commandButton value="Ir para à página"  action="#{pageBean.goTo}"/>
+    </h:form>
+    <h:form>
+    	Nome: &nbsp;<h:inputText value="#{pageBean.nome}"/>
+    	<h:commandButton value="Processar" action="#{pageBean.processar}"/>
+    </h:form>
+    <h:form>
+    	<h2>Formulário para Passagem de Parâmetros via GET</h2>
+    	<h:button value="Processar" outcome="result">
+    		<f:param name="nome" value="Titio"/>
+    	</h:button>
+    </h:form>
+</div>
+
+</body>
+</html>
